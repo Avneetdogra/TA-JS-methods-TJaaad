@@ -1,31 +1,86 @@
 // NOTE: You can not use reduce methods to solve this exercise
 
 function countAllPeople() {
-  // your code goes here
-}
-
-function peopleByHouses() {
-  // your code goes here
+  let count = 0;
+   got.houses.forEach( house => {
+    count = count + house.people.length;
+  }) 
+  return count;
 }
 
 function everyone() {
-  // your code goes here
+  let final =[];
+    got.houses.map(house=>{
+     let peopleName = house.name;
+    
+         final.push(peopleName);
+      
+  });
+  return final;
 }
 
 function nameWithS() {
   // your code goes here
-}
+  let final = []
+  let arr = []
+   got.houses.filter(house => {
+     arr.push(house)
+   })
+   let filterSatrtWithS = arr.filter(hName => hName.name.includes("s"))
+   filterSatrtWithS.filter( house => {
+        house.people.filter(people => {
+          final.push(people.name)
+        })
+   } );
+  return final;
+  
+};
 
 function nameWithA() {
   // your code goes here
-}
+  let final = []
+  let arr = []
+   got.houses.filter(house => {
+     arr.push(house)
+   })
+   let filterSatrtWithS = arr.filter(hName => hName.name.includes("a"))
+   filterSatrtWithS.map( house => {
+        house.people.map(people => {
+          final.push(people.name)
+        })
+   } )
+  return final;
+  }
 
 function surnameWithS() {
-  // your code goes here
+let final = []
+let arr = []
+ got.houses.filter(house => {
+   arr.push(house)
+ })
+ let filterSatrtWithS = arr.filter(hName => hName.name.startsWith("S"))
+ filterSatrtWithS.map( house => {
+      house.people.map(people => {
+        final.push(people.name)
+      })
+ } )
+return final;
 }
 
 function surnameWithA() {
   // your code goes here
+  let final = []
+let arr = []
+ got.houses.filter(house => {
+   arr.push(house)
+ })
+ let filterSatrtWithS = arr.filter(hName => hName.name.startsWith("A"))
+ filterSatrtWithS.map( house => {
+      house.people.map(people => {
+        final.push(people.name)
+      })
+ } )
+return final;
 }
 
 function peopleNameOfAllHouses() {
